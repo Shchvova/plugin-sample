@@ -1,9 +1,9 @@
 name: Say Hello
 on: 
-  - repository_dispatch:
-      types: ['build']
-  - create:
-      types: ['tag']
+  repository_dispatch:
+    types: ['build']
+  create:
+    types: ['tag']
 
 jobs:
   say-hello:
