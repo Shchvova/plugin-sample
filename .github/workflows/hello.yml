@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Echo
-      - env:
+        env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-      - run: echo Hello From the "$GITHUB_CONTEXT"
+        run: echo Hello From the "$GITHUB_CONTEXT"
