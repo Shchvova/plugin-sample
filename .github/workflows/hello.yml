@@ -1,0 +1,11 @@
+name: Say Hello
+on: repository_dispatch
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Echo
+      - env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+      - run: echo Hello From the "$GITHUB_CONTEXT"
