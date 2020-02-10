@@ -1,7 +1,9 @@
 name: Say Hello
 on: 
-  repository_dispatch:
-    types: ['build']
+  - repository_dispatch:
+      types: ['build']
+  - create:
+      types: ['tag']
 
 jobs:
   say-hello:
@@ -11,5 +13,5 @@ jobs:
         env:
           GITHUB_NAME: ${{ github.event.sender.login }}
         run: |
-          echo Hello From the "$GITHUB_CONTEXT"
+          echo Hello From the "$GITHUB_NAME"
           echo Debug: "${{ toJson(github) }}"
