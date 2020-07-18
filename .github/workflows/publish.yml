@@ -15,9 +15,16 @@ on:
         default: '2100'
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo Hello
   notify-group: # Sends an email to the https://groups.google.com/forum/#!forum/solar2d-builds
     runs-on: ubuntu-latest
     if: always()
+    needs: 
+      - test
     steps:
       - uses: technote-space/workflow-conclusion-action@v1
       - name: notify
