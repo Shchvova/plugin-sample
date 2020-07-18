@@ -49,5 +49,5 @@ jobs:
           "
           fi
           fi
-          TEXT="${TEXT//$'\n'/\\\\n}"
+          TEXT="${TEXT//$'\n'/\\n}"
           curl -X POST -H "Content-Type: application/json" -d '{"value1":"'"$BUILD_NUMBER"' '"$WORKFLOW_CONCLUSION"'","value2":"'"$TEXT"'"}' https://maker.ifttt.com/trigger/Solar2DBuild/with/key/$Z$T
